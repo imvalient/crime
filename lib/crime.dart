@@ -11,3 +11,4 @@ export 'src/model/crime_coverage.dart';
 export 'src/model/crime_incidents.dart';
 export 'src/model/crime_raw_data.dart';
 export 'src/model/crime_stats.dart';
+export 'src/exception/crime_exception.dart';

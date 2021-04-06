@@ -1,3 +1,7 @@
+# 0.1.1
+- Dart static analysis fixes.
+- Fix exception class not being exposed.
+
 # 0.1.0
 Initial commit.
   - getCrimeCoverageData

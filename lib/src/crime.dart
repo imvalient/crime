@@ -18,8 +18,9 @@ class Crime {
   Future<List<CrimeCoverage>> getCrimeCoverageData() {
     final String? apiKey = this.apiKey;
 
-    if (apiKey == null)
+    if (apiKey == null) {
       throw MandatoryApiKeyException("API Key it's a mandatory field", "001");
+    }
 
     return _client
         .getCrimeCoverageData(apiKey, http.Client())
@@ -35,8 +36,9 @@ class Crime {
       {int page = 1}) {
     final String? apiKey = this.apiKey;
 
-    if (apiKey == null)
+    if (apiKey == null) {
       throw MandatoryApiKeyException("API Key it's a mandatory field", "001");
+    }
 
     return _client
         .getCrimeIncidents(latitude, longitude, distance, startDateTime,
@@ -53,8 +55,9 @@ class Crime {
       {int source = 1}) {
     final String? apiKey = this.apiKey;
 
-    if (apiKey == null)
+    if (apiKey == null) {
       throw MandatoryApiKeyException("API Key it's a mandatory field", "001");
+    }
 
     return _client
         .getCrimeStats(latitude, longitude, distance, startDateTime,
@@ -76,8 +79,9 @@ class Crime {
       {int page = 1}) {
     final String? apiKey = this.apiKey;
 
-    if (apiKey == null)
+    if (apiKey == null) {
       throw MandatoryApiKeyException("API Key it's a mandatory field", "001");
+    }
 
     return _client
         .getCrowdsourcedCrimeIncidents(latitude, longitude, distance,

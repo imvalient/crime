@@ -17,7 +17,7 @@ It has a FREE API key for testing purposes that can be found in the previous lin
 
 ```yaml
 dependencies:
-  crime: 0.1.0
+  crime: 0.1.1
 ```
 
 ## Example
