@@ -1,3 +1,6 @@
+# 0.1.2
+- Fixed crime crowd requests data format.
+
 # 0.1.1
 - Dart static analysis fixes.
 - Fix exception class not being exposed.

@@ -28,10 +28,10 @@ class Crime {
         .catchError((error) => throw error);
   }
 
-  /// Returns a [CrimeIncidents] containing crime incidents information from an specific location.
+  /// Returns a [CrimeRawIncidents] containing crime incidents information from an specific location.
   ///
   /// Throws a [CrimeException].
-  Future<CrimeIncidents> getCrimeIncidents(double latitude, double longitude,
+  Future<CrimeRawIncidents> getCrimeIncidents(double latitude, double longitude,
       String distance, DateTime startDateTime, DateTime endDateTime,
       {int page = 1}) {
     final String? apiKey = this.apiKey;
@@ -66,11 +66,11 @@ class Crime {
         .catchError((error) => throw error);
   }
 
-  /// Returns a [CrimeIncidents] containing crime incidents information from an specific location.
+  /// Returns a [CrimeCrowdIncidents] containing crime incidents information from an specific location.
   /// The data is provided by the community.
   ///
   /// Throws a [CrimeException].
-  Future<CrimeIncidents> getCrowdsourcedCrimeIncidents(
+  Future<CrimeCrowdIncidents> getCrowdsourcedCrimeIncidents(
       double latitude,
       double longitude,
       String distance,
