@@ -6,7 +6,7 @@ void main() async {
 
     final Crime crime = Crime(apiKey: API_KEY);
 
-    final CrimeIncidents crimeIncidents = await crime.getCrimeIncidents(
+    final CrimeRawIncidents crimeIncidents = await crime.getCrimeIncidents(
       37.773972,
       -122.431297,
       "50mi",

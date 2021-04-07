@@ -17,7 +17,7 @@ It has a FREE API key for testing purposes that can be found in the previous lin
 
 ```yaml
 dependencies:
-  crime: 0.1.1
+  crime: 0.1.2
 ```
 
 ## Example
@@ -33,7 +33,7 @@ void main() async {
 
     final Crime crime = Crime(apiKey: API_KEY);
 
-    final CrimeIncidents crimeIncidents = await crime.getCrimeIncidents(
+    final CrimeRawIncidents crimeIncidents = await crime.getCrimeIncidents(
       37.773972,
       -122.431297,
       "50mi",
@@ -74,7 +74,7 @@ Future<List<CrimeCoverage>> getCrimeCoverageData();
 A method to obtain crime incident data from a specific location, over a range of distance, and over a period of time.
 
 ```dart
-Future<CrimeIncidents> getCrimeIncidents(double latitude, double longitude, String distance, DateTime startDateTime, DateTime endDateTime, {int page = 1});
+Future<CrimeRawIncidents> getCrimeIncidents(double latitude, double longitude, String distance, DateTime startDateTime, DateTime endDateTime, {int page = 1});
 ```
 
 ### getCrimeStats
@@ -90,7 +90,7 @@ Future<CrimeStats> getCrimeStats(double latitude, double longitude, String dista
 A method to obtain unofficial crime incident data from a specific location, over a range of distance, and over a period of time. This information is collected from the community through CityCop app.
 
 ```dart
-Future<CrimeIncidents> getCrowdsourcedCrimeIncidents(double latitude, double longitude, String distance, DateTime startDateTime, DateTime endDateTime, {int page = 1});
+Future<CrimeCrowdIncidents> getCrowdsourcedCrimeIncidents(double latitude, double longitude, String distance, DateTime startDateTime, DateTime endDateTime, {int page = 1});
 ```
 
 ## Responses
@@ -105,13 +105,13 @@ Future<CrimeIncidents> getCrowdsourcedCrimeIncidents(double latitude, double lon
 | firstIncidentDate | DateTime | The date of the first incident. |
 | lastIncidentDate | DateTime | The date of the last incident. |
 
-### CrimeIncidents
+### CrimeRawIncidents
 
 | Attribute | Type | Description |
 |-----------|------|-------------|
 | totalIncidents| int | Total number of incidents. |
 | totalPages | int | Total number of pages for the request. |
-| incidents | List\<[CrimeRawData](####CrimeRawData)\> | List of incidents. |
+| incidents | List\<[CrimeRawData](#CrimeRawData)\> | List of incidents. |
 
 #### CrimeRawData
 
@@ -131,6 +131,23 @@ Future<CrimeIncidents> getCrowdsourcedCrimeIncidents(double latitude, double lon
 | incidentLatitude | double | Incident latitude. |
 | incidentLongitude | double | Incident longitude. |
 | incidentAddress | String | Incident address (approximate in some cases). |
+
+### CrimeCrowdIncidents
+
+| Attribute | Type | Description |
+|-----------|------|-------------|
+| totalIncidents| int | Total number of incidents. |
+| totalPages | int | Total number of pages for the request. |
+| incidents | List\<[CrimeRawCrowdData](#CrimeRawCrowdData)\> | List of incidents. |
+
+#### CrimeRawCrowdData
+
+| Attribute | Type | Description |
+|-----------|------|-------------|
+| incidentCode | String | Incident code provided by the source. |
+| incidentLatitude | double | Incident latitude. |
+| incidentLongitude | double | Incident longitude. |
+
 
 ### CrimeStats
 

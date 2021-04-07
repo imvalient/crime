@@ -14,9 +14,9 @@ abstract class CrimeClient {
   Future<List<CrimeCoverage>> getCrimeCoverageData(
       String apiKey, http.Client client);
 
-  /// Return [CrimeIncidents] given a [latitude], [longitude], [distance],
+  /// Return [CrimeRawIncidents] given a [latitude], [longitude], [distance],
   /// [startDateTime], [endDatetime], [page], [apiKey] and [client].
-  Future<CrimeIncidents> getCrimeIncidents(
+  Future<CrimeRawIncidents> getCrimeIncidents(
       double latitude,
       double longitude,
       String distance,
@@ -38,9 +38,9 @@ abstract class CrimeClient {
       String apiKey,
       http.Client client);
 
-  /// Return [CrimeIncidents] given a [latitude], [longitude], [distance],
+  /// Return [CrimeCrowdIncidents] given a [latitude], [longitude], [distance],
   /// [startDateTime], [endDateTime], [page], [apiKey], [client]
-  Future<CrimeIncidents> getCrowdsourcedCrimeIncidents(
+  Future<CrimeCrowdIncidents> getCrowdsourcedCrimeIncidents(
       double latitude,
       double longitude,
       String distance,
@@ -92,7 +92,7 @@ class CrimeClientImpl implements CrimeClient {
   }
 
   @override
-  Future<CrimeIncidents> getCrimeIncidents(
+  Future<CrimeRawIncidents> getCrimeIncidents(
       double latitude,
       double longitude,
       String distance,
@@ -119,7 +119,7 @@ class CrimeClientImpl implements CrimeClient {
       switch (response.statusCode) {
         case 200:
           {
-            return CrimeIncidents.fromJson(json.decode(response.body));
+            return CrimeRawIncidents.fromJson(json.decode(response.body));
           }
         case 429:
           {
@@ -189,7 +189,7 @@ class CrimeClientImpl implements CrimeClient {
   }
 
   @override
-  Future<CrimeIncidents> getCrowdsourcedCrimeIncidents(
+  Future<CrimeCrowdIncidents> getCrowdsourcedCrimeIncidents(
       double latitude,
       double longitude,
       String distance,
@@ -216,7 +216,7 @@ class CrimeClientImpl implements CrimeClient {
       switch (response.statusCode) {
         case 200:
           {
-            return CrimeIncidents.fromJson(json.decode(response.body));
+            return CrimeCrowdIncidents.fromJson(json.decode(response.body));
           }
         case 429:
           {

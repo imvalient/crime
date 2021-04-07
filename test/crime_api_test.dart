@@ -13,7 +13,7 @@ void main() {
         final List<CrimeCoverage> crimeCoverage =
             await crime.getCrimeCoverageData();
 
-        expect(crimeCoverage.length, 255);
+        expect(crimeCoverage.length, 254);
       } catch (e) {
         expect(e, isNull);
       }
@@ -42,16 +42,14 @@ void main() {
         'it should return 696538 when getCrowdsourcedCrimeIncidents() gets called with specific parameters',
         () async {
       try {
-        final CrimeIncidents result = await crime.getCrowdsourcedCrimeIncidents(
-          37.773972,
-          -122.431297,
-          "50mi",
-          DateTime(2019, 1, 1),
-          DateTime(2021, 2, 7),
-        );
+        final CrimeCrowdIncidents result =
+            await crime.getCrowdsourcedCrimeIncidents(37.773972, -122.431297,
+                "5000mi", DateTime(2019, 1, 1), DateTime(2021, 2, 7),
+                page: 5);
 
-        expect(result.totalIncidents, 696538);
+        expect(result.totalIncidents, 2999);
       } catch (e) {
+        print(e);
         expect(e, isNull);
       }
     });
