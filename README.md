@@ -144,7 +144,6 @@ Future<CrimeCrowdIncidents> getCrowdsourcedCrimeIncidents(double latitude, doubl
 
 | Attribute | Type | Description |
 |-----------|------|-------------|
-| cityKey | String | City code in UN/LOCODE standard. |
 | incidentCode | String | Incident code provided by the source. |
 | incidentLatitude | double | Incident latitude. |
 | incidentLongitude | double | Incident longitude. |
