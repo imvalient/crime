@@ -1,3 +1,6 @@
+# 0.1.3
+- DOC fixes.
+
 # 0.1.2
 - Fixed crime crowd requests data format.
 
