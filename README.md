@@ -7,7 +7,7 @@
 
 ## Introduction
 
-Package to make Crime data requests, this API lets you retrieve crime information from 30+ cities across the US and LATAM. The API exposes four methods to retrieve raw crime date, crime statistics, crime coverage information, and crowdsourced crime data.
+Package to make Crime data requests, this API lets you retrieve crime information from 250+ cities across the US and LATAM. The API exposes four methods to retrieve raw crime date, crime statistics, crime coverage information, and crowdsourced crime data.
 
 It's implementing the methods from the following known Crime data API provider [crimeometer.com](https://www.crimeometer.com/crime-data-api-documentation).
 
